@@ -1,0 +1,31 @@
+﻿@model IEnumerable<AspNet.MVC.Models.Book>
+
+@{
+    ViewData["Title"] = "Popis Knjiga";
+}
+
+<h2>Popis Knjiga</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naslov</th>
+            <th>Žanr</th>
+            <th>Autor</th>
+            <th>Zemlja</th>
+            <th>Datum Rođenja</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Genre</td>
+                <td>@book.Author.Name</td>
+                <td>@book.Author.CountryOfOrigin</td>
+                <td>@book.Author.DateOfBirth</td>
+            </tr>
+        }
+    </tbody>
+</table>
